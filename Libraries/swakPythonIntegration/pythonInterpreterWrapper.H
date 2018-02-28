@@ -192,7 +192,7 @@ public:
     //- Execute code and capture the stdout. Return true if there was no problem
     bool executeCodeCaptureOutput(
         const string &code,
-        string &stdout,
+        string &capStdout,
         bool putVariables,
         bool failOnException=false
     );
