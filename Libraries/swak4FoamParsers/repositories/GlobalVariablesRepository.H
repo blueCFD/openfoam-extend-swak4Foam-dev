@@ -47,7 +47,7 @@ Contributors/Copyright:
 
 #include "ExpressionResult.H"
 
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 
 #include "regIOobject.H"
 

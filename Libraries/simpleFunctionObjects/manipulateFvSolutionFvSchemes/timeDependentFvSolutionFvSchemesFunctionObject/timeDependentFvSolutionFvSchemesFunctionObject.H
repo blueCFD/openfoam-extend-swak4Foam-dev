@@ -51,7 +51,7 @@ Contributors/Copyright:
 
 #include "manipulateFvSolutionFvSchemesFunctionObject.H"
 
-#include "Tuple2.H"
+#include "Tuple2.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -47,7 +47,7 @@ Contributors/Copyright:
 #ifndef CloudMoveStatistics_H
 #define CloudMoveStatistics_H
 
-#include "CloudFunctionObject.H"
+#include "CloudFunctionObject.T.H"
 
 #include "swakCloudTypes.H"
 

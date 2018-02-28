@@ -28,3 +28,8 @@ LIB_LIBS = \
     -lmeshTools \
     $(INCOMPRESSIBLE_TURB_ALL_LIBS) \
     $(INCOMPRESSIBLE_TURB_LIB)
+
+#if defined( WIN32 ) || defined( WIN64 )
+LIB_LIBS += \
+    -lincompressibleTransportModels
+#endif

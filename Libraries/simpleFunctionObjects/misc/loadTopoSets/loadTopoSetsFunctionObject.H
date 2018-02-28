@@ -49,7 +49,7 @@ Contributors/Copyright:
 
 #include "simpleFunctionObject.H"
 
-#include "HashSet.H"
+#include "HashSet.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

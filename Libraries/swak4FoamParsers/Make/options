@@ -28,8 +28,13 @@ EXE_INC = -I$(OBJECTS_DIR) \
     $(ADDITIONALFILES_INC)
 
 LIB_LIBS = -lfiniteVolume \
-	-lsampling \
-        -llagrangian \
-	-ldynamicMesh \
-	-lsurfMesh \
-	-lmeshTools
+    -lsampling \
+    -llagrangian \
+    -ldynamicMesh \
+    -lsurfMesh \
+    -lmeshTools
+
+#if defined( WIN32 ) || defined( WIN64 )
+LIB_LIBS += \
+    -lfileFormats
+#endif

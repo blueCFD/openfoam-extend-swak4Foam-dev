@@ -41,8 +41,15 @@ Description
 SourceFiles
     provokeSignalFunctionObject.C
 
+Modifications
+    This file has been modified using parts of the files located at
+    "src/OSspecific/MSwindows/signals", from FSD blueCAPE's port of OpenFOAM
+    for Windows (blueCFD-Core), which is derived from Symscape's
+    (www.symscape.com) patches for porting OpenFOAM for Windows.
+
 Contributors/Copyright:
     2014, 2016-2017 Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
+    2018 FSD blueCAPE Lda <www.bluecape.com.pt>
 
  SWAK Revision: $Id$
 \*---------------------------------------------------------------------------*/
@@ -52,7 +59,7 @@ Contributors/Copyright:
 
 #include "simpleFunctionObject.H"
 
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -82,9 +89,15 @@ public:
         sigSEGV,
         sigINT,
         sigTERM,
+#if defined(WIN32) || defined(WIN64)
+        sigBREAK
+#define SIGNAL_COUNT 5
+#else
         sigQUIT,
         sigUSR1,
         sigUSR2
+#define SIGNAL_COUNT 7
+#endif
     };
 
 private:
@@ -95,7 +108,7 @@ private:
 
     bool raiseOnThisProc_;
 
-    static const NamedEnum<possibleSignals,7> possibleSignalsNames_;
+    static const NamedEnum<possibleSignals,SIGNAL_COUNT> possibleSignalsNames_;
 
 public:
 

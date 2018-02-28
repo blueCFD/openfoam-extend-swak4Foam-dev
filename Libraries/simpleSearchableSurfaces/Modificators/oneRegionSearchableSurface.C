@@ -36,7 +36,7 @@ Contributors/Copyright:
 
 #include "oneRegionSearchableSurface.H"
 #include "addToRunTimeSelectionTable.H"
-#include "SortableList.H"
+#include "SortableList.T.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

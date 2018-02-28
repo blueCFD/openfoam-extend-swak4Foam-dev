@@ -24,7 +24,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "IOOutputFilter.H"
-#include "Time.H"
+#include "Time.T.H"
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

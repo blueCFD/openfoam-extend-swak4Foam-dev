@@ -53,7 +53,7 @@ Contributors/Copyright:
 #ifndef EliminateCaughtParcels_H
 #define EliminateCaughtParcels_H
 
-#include "CloudFunctionObject.H"
+#include "CloudFunctionObject.T.H"
 
 #include "swakCloudTypes.H"
 

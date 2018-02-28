@@ -40,7 +40,7 @@ Contributors/Copyright:
 
 #include "swakCloudTypes.H"
 
-#include "CloudFunctionObject.H"
+#include "CloudFunctionObject.T.H"
 
 #include "basicKinematicCloud.H"
 #include "basicThermoCloud.H"

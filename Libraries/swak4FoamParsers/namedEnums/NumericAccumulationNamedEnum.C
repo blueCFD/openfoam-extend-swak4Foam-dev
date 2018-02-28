@@ -35,7 +35,7 @@ Contributors/Copyright:
 \*---------------------------------------------------------------------------*/
 
 #include "NumericAccumulationNamedEnum.H"
-#include "HashSet.H"
+#include "HashSet.T.H"
 
 namespace Foam {
 

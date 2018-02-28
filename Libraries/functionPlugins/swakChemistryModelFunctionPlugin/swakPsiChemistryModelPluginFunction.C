@@ -37,7 +37,7 @@ Contributors/Copyright:
 #include "swakPsiChemistryModelPluginFunction.H"
 #include "FieldValueExpressionDriver.H"
 
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 #include "swakThermoTypes.H"
 
 #include "addToRunTimeSelectionTable.H"

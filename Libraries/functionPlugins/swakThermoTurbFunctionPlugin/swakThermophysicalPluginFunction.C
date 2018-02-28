@@ -37,7 +37,7 @@ Contributors/Copyright:
 #include "swakThermophysicalPluginFunction.H"
 #include "FieldValueExpressionDriver.H"
 
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 
 #include "addToRunTimeSelectionTable.H"
 

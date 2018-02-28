@@ -49,7 +49,7 @@ Contributors/Copyright:
 #ifndef CorrectParticleCell_H
 #define CorrectParticleCell_H
 
-#include "CloudFunctionObject.H"
+#include "CloudFunctionObject.T.H"
 
 #include "swakCloudTypes.H"
 

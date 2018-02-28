@@ -37,7 +37,7 @@ Contributors/Copyright:
 #include <Random.H>
 #include <wallDist.H>
 #include "MeshDistFromPatch.H"
-#include "FaceCellWave.H"
+#include "FaceCellWave.T.H"
 #include <nearWallDist.H>
 #include <dimensionedVector.H>
 #include "cellSet.H"

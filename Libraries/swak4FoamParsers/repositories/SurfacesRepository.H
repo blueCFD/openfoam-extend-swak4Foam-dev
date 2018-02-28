@@ -47,7 +47,7 @@ Contributors/Copyright:
 #ifndef SurfacesRepository_H
 #define SurfacesRepository_H
 
-#include "PtrMap.H"
+#include "PtrMap.T.H"
 #include "sampledSurface.H"
 #include "RepositoryBase.H"
 

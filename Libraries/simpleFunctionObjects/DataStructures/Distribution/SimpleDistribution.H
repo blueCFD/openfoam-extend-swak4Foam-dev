@@ -47,9 +47,9 @@ Contributors/Copyright:
 #ifndef SimpleDistribution_H
 #define SimpleDistribution_H
 
-#include "Distribution.H"
+#include "Distribution.T.H"
 
-#include "Tuple2.H"
+#include "Tuple2.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

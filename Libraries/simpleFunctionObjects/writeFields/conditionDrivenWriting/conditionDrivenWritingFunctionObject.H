@@ -49,7 +49,7 @@ Contributors/Copyright:
 
 #include "simpleFunctionObject.H"
 
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 
 #include "TimeCloneList.H"
 

@@ -28,8 +28,15 @@ License
     along with OpenFOAM; if not, write to the Free Software Foundation,
     Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
+Modifications
+    This file has been modified using parts of the files located at
+    "src/OSspecific/MSwindows/signals", from FSD blueCAPE's port of OpenFOAM
+    for Windows (blueCFD-Core), which is derived from Symscape's
+    (www.symscape.com) patches for porting OpenFOAM for Windows.
+
 Contributors/Copyright:
     2008-2017 Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
+    2014-2018 FSD blueCAPE Lda <www.bluecape.com.pt>
 
  SWAK Revision: $Id$
 \*---------------------------------------------------------------------------*/
@@ -37,7 +44,7 @@ Contributors/Copyright:
 #include "writeOldTimesOnSignal.H"
 #include "addToRunTimeSelectionTable.H"
 
-#include "Pstream.H"
+#include "Pstream.T.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
@@ -75,8 +82,10 @@ writeOldTimesOnSignalFunctionObject::writeOldTimesOnSignalFunctionObject
     sigINT_(dict.lookupOrDefault<bool>("sigINT",false)),
     sigTERM_(dict.lookupOrDefault<bool>("sigTERM",false)),
     sigQUIT_(dict.lookupOrDefault<bool>("sigQUIT",false)),
+#if !(defined(WIN32) || defined(WIN64))
     sigUSR1_(dict.lookupOrDefault<bool>("sigUSR1",false)),
     sigUSR2_(dict.lookupOrDefault<bool>("sigUSR2",false)),
+#endif
     alreadyDumped_(false),
     itWasMeWhoReraised_(false)
 {
@@ -248,12 +257,18 @@ bool writeOldTimesOnSignalFunctionObject::start()
         handlers_.append(
             SignalHandlerInfo(
                 "SIGQUIT",
+                #if defined(WIN32) || defined(WIN64)
+                // SIGBREAK is best alternative to SIGQUIT on windows
+                SIGBREAK
+                #else
                 SIGQUIT
+                #endif
             )
         );
     } else {
         Info << "To catch the QUIT-signal set 'sigQUIT true;'" << endl;
     }
+#if !(defined(WIN32) || defined(WIN64))
     if(sigUSR1_) {
         handlers_.append(
             SignalHandlerInfo(
@@ -274,6 +289,7 @@ bool writeOldTimesOnSignalFunctionObject::start()
     } else {
         Info << "To catch the USR2-signal set 'sigUSR2 true;'" << endl;
     }
+#endif
 
     handlers_.shrink();
     Info << handlers_.size() << " signal handlers installed" << endl;
@@ -308,17 +324,35 @@ writeOldTimesOnSignalFunctionObject::SignalHandlerInfo::SignalHandlerInfo(
 {
     Pout << "Set " << name_ << "(" << sig_ << ") signal handler" << endl;
 
+#if defined(WIN32) || defined(WIN64)
+    // Reset old handling
+    const __p_sig_fn_t success = ::signal(sig_, oldAction_);
+    oldAction_ = SIG_DFL;
+
+    if (SIG_ERR == success)
+    {
+
+#else
     struct sigaction newAction;
     newAction.sa_handler = sigHandler;
     newAction.sa_flags = SA_NODEFER;
     sigemptyset(&newAction.sa_mask);
     if (sigaction(sig_, &newAction, &oldAction_) < 0) {
+#endif
+
         FatalErrorIn
         (
             "writeOldTimesOnSignalFunctionObject::SignalHandlerInfo::SignalHandlerInfo"
         )   << "Cannot set " << name_ << "(" << sig_ << ") trapping"
             << abort(FatalError);
     }
+#if defined(WIN32) || defined(WIN64)
+    else
+    {
+        oldAction_ = success;
+    }
+#endif
+
     set_=true;
 }
 
@@ -330,7 +364,15 @@ void writeOldTimesOnSignalFunctionObject::SignalHandlerInfo::resetHandler()
             << endl;
         return;
     }
+
+#if defined(WIN32) || defined(WIN64)
+    const __p_sig_fn_t success = ::signal(sig_, oldAction_);
+    oldAction_ = SIG_DFL;
+    if (SIG_ERR == success)
+    {
+#else
     if (sigaction(sig_, &oldAction_, NULL) < 0) {
+#endif
         FatalErrorIn
             (
                 "writeOldTimesOnSignalFunctionObject::SignalHandlerInfo::SignalHandlerInfo"

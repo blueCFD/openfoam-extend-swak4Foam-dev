@@ -45,7 +45,7 @@ Contributors/Copyright:
 
 #include "CommonValueExpressionDriver.H"
 #include "speciesTable.H"
-#include "PtrList.H"
+#include "PtrList.T.H"
 #include "LogicalAccumulationNamedEnum.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

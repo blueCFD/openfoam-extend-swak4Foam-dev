@@ -49,7 +49,7 @@ Contributors/Copyright:
 
 #include "primitiveFieldsFwd.H"
 #include "pointFieldFwd.H"
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 #include "volFields.H"
 
 #include "swak.H"

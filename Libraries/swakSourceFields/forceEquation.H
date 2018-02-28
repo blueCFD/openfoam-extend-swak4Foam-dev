@@ -49,7 +49,7 @@ Contributors/Copyright:
 
 #include "fvMatrix.H"
 
-#include "DynamicList.H"
+#include "DynamicList.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

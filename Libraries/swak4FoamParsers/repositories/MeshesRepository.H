@@ -47,7 +47,7 @@ Contributors/Copyright:
 #ifndef MeshesRepository_H
 #define MeshesRepository_H
 
-#include "PtrMap.H"
+#include "PtrMap.T.H"
 #include "fvMesh.H"
 #include "meshToMesh.H"
 

@@ -35,7 +35,7 @@ Contributors/Copyright:
 \*---------------------------------------------------------------------------*/
 
 #include "DebugOStream.H"
-#include "Pstream.H"
+#include "Pstream.T.H"
 #include <sstream>
 
 namespace Foam {

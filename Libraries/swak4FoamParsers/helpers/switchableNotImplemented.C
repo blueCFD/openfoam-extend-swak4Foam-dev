@@ -41,7 +41,7 @@ Contributors/Copyright:
 \*---------------------------------------------------------------------------*/
 
 #include "switchableNotImplemented.H"
-#include "HashSet.H"
+#include "HashSet.T.H"
 #include "dictionary.H"
 
 namespace Foam {

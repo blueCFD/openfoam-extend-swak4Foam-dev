@@ -28,7 +28,7 @@ License
 #ifdef FOAM_HAS_NO_IOFILTERFUNCTIONOBJECT_ANYMORE
 
 #include "outputFilterOutputControl.H"
-#include "PstreamReduceOps.H"
+#include "PstreamReduceOps.T.H"
 
 // * * * * * * * * * * * * * Static Member Data  * * * * * * * * * * * * * * //
 

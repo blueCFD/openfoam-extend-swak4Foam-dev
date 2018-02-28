@@ -52,7 +52,7 @@ Contributors/Copyright:
 
 #include "conditionalFunctionObjectListProxy.H"
 #include "regExp.H"
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -28,8 +28,15 @@ License
     along with OpenFOAM; if not, write to the Free Software Foundation,
     Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
+Modifications
+    This file has been modified using parts of the files located at
+    "src/OSspecific/MSwindows", from FSD blueCAPE's port of OpenFOAM
+    for Windows (blueCFD-Core), which is derived from Symscape's
+    (www.symscape.com) patches for porting OpenFOAM for Windows.
+
 Contributors/Copyright:
     2011-2013, 2015-2017 Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
+    2012-2018 FSD blueCAPE Lda <www.bluecape.com.pt>
 
  SWAK Revision: $Id$
 \*---------------------------------------------------------------------------*/
@@ -47,6 +54,13 @@ Contributors/Copyright:
 #endif
 #ifdef __linux__
 #include <unistd.h>
+#endif
+#if defined(WIN32) || defined(WIN64)
+// Undefine DebugInfo, because we don't need it and it collides with a macro
+// in windows.h
+#undef DebugInfo
+
+#include <windows.h>
 #endif
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
@@ -94,6 +108,14 @@ executeIfExecutableFitsFunctionObject::executeIfExecutableFitsFunctionObject
         const int bufSize=1024;
         char path[bufSize];
         label length=readlink("/proc/self/exe",path,bufSize-1);
+        path[length]='\0';
+        exePath=string(path);
+    }
+#elif defined(WIN32) || defined(WIN64)
+    {
+        const int bufSize=1024;
+        char path[bufSize];
+        label length=label(GetModuleFileName(NULL,path,bufSize-1));
         path[length]='\0';
         exePath=string(path);
     }

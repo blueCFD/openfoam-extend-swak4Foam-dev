@@ -50,7 +50,7 @@ Contributors/Copyright:
 #ifdef FOAM_CLOUDTEMPLATE_IS_CLOUD_H
 #include "CloudTemplate.H"
 #else
-#include "Cloud.H"
+#include "Cloud.T.H"
 #endif
 
 #include "ReaderParticle.H"

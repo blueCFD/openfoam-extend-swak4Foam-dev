@@ -49,9 +49,9 @@ Contributors/Copyright:
 #include "functionObject.H"
 #include "dictionary.H"
 #include "OFstream.H"
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 #include "boolList.H"
-#include "Field.H"
+#include "Field.T.H"
 
 #include "pythonInterpreterWrapper.H"
 

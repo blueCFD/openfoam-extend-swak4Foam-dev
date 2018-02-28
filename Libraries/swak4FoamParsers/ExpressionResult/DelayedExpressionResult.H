@@ -48,7 +48,7 @@ Contributors/Copyright:
 #define DelayedExpressionResult_H
 
 #include "ExpressionResult.H"
-#include "Tuple2.H"
+#include "Tuple2.T.H"
 
 #include "exprString.H"
 

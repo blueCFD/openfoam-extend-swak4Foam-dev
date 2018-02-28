@@ -47,7 +47,7 @@ Contributors/Copyright:
 #ifndef RepositoryBase_H
 #define RepositoryBase_H
 
-#include "DynamicList.H"
+#include "DynamicList.T.H"
 #include "objectRegistry.H"
 
 #include "DebugOStream.H"

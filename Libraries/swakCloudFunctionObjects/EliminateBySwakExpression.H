@@ -46,7 +46,7 @@ Contributors/Copyright:
 #ifndef EliminateBySwakExpression_H
 #define EliminateBySwakExpression_H
 
-#include "CloudFunctionObject.H"
+#include "CloudFunctionObject.T.H"
 
 #include "swakCloudTypes.H"
 

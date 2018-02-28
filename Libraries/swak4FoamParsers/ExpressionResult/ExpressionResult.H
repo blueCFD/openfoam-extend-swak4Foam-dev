@@ -53,7 +53,7 @@ Contributors/Copyright:
 #error "This swak4Foam-version is only used for the 2.x-versions of OpenFOAM. For lower versions there is a special branch"
 #endif
 
-#include "Field.H"
+#include "Field.T.H"
 #include "dimensionedType.H"
 #include "IOobject.H"
 

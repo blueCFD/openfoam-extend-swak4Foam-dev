@@ -48,7 +48,7 @@ Contributors/Copyright:
 
 #include "ReaderParticleCloud.H"
 
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

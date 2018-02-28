@@ -49,7 +49,7 @@ Contributors/Copyright:
 
 #include "meshToMesh.H"
 
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

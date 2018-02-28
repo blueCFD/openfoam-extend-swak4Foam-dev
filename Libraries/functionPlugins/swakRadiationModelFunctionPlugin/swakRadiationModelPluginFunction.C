@@ -37,7 +37,7 @@ Contributors/Copyright:
 #include "swakRadiationModelPluginFunction.H"
 #include "FieldValueExpressionDriver.H"
 
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 
 #include "swakThermoTypes.H"
 

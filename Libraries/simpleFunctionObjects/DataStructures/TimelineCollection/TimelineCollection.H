@@ -52,7 +52,7 @@ Contributors/Copyright:
 #include "swakTime.H"
 
 #include "OFstream.H"
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

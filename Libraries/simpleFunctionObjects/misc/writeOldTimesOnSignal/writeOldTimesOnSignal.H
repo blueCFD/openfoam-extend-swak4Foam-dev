@@ -38,8 +38,15 @@ Description
 SourceFiles
     writeOldTimesOnSignalFunctionObject.C
 
+Modifications
+    This file has been modified using parts of the files located at
+    "src/OSspecific/MSwindows/signals", from FSD blueCAPE's port of OpenFOAM
+    for Windows (blueCFD-Core), which is derived from Symscape's
+    (www.symscape.com) patches for porting OpenFOAM for Windows.
+
 Contributors/Copyright:
     2014-2017 Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
+    2014-2018 FSD blueCAPE Lda <www.bluecape.com.pt>
 
  SWAK Revision: $Id$
 \*---------------------------------------------------------------------------*/
@@ -50,11 +57,17 @@ Contributors/Copyright:
 #include "functionObject.H"
 #include "dictionary.H"
 #include "TimeCloneList.H"
-#include "DynamicList.H"
+#include "DynamicList.T.H"
 
 #include <signal.h>
 
 #include "swak.H"
+
+#if defined(WIN32) || defined(WIN64)
+#define SIG_ACTION_TYPE __p_sig_fn_t
+#else
+#define SIG_ACTION_TYPE struct sigaction
+#endif
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -85,7 +98,7 @@ class writeOldTimesOnSignalFunctionObject
 
     class SignalHandlerInfo {
     protected:
-        struct sigaction oldAction_;
+        SIG_ACTION_TYPE oldAction_;
         word name_;
         int sig_;
         bool set_;
@@ -129,8 +142,11 @@ class writeOldTimesOnSignalFunctionObject
     bool sigINT_;
     bool sigTERM_;
     bool sigQUIT_;
+
+#if !(defined(WIN32) || defined(WIN64))
     bool sigUSR1_;
     bool sigUSR2_;
+#endif
 
     bool alreadyDumped_;
 

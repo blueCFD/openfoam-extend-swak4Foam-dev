@@ -51,7 +51,7 @@ Contributors/Copyright:
 #include "exprString.H"
 
 #ifdef FOAM_DATAENTRY_IS_NOW_FUNCTION1
-#include "Function1.H"
+#include "Function1.T.H"
 #define DataEntry Function1
 #else
 #include "DataEntry.H"

@@ -23,9 +23,9 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "Distribution.H"
+#include "Distribution.T.H"
 #include "OFstream.H"
-#include "ListOps.H"
+#include "ListOps.T.H"
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 

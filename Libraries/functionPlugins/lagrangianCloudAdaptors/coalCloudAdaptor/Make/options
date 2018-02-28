@@ -49,3 +49,8 @@ LIB_LIBS = \
     $(THERMOPHYSICALFUNCTIONS_LIB) \
     $(RADIATION_LIB) \
     -lcoalCombustion
+
+#if defined( WIN32 ) || defined( WIN64 )
+LIB_LIBS += \
+    -lSLGThermo
+#endif

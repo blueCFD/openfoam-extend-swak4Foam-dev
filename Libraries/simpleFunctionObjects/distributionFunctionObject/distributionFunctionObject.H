@@ -47,7 +47,7 @@ Contributors/Copyright:
 #define distributionFunctionObject_H
 
 #include "timelineFunctionObject.H"
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 
 #include "SimpleDistribution.H"
 

@@ -48,7 +48,7 @@ Contributors/Copyright:
 #define timelineFunctionObject_H
 
 #include "simpleDataFunctionObject.H"
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 #include "stringList.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

@@ -45,10 +45,10 @@ Contributors/Copyright:
 #ifndef NumericAccumulationNamedEnum_H
 #define NumericAccumulationNamedEnum_H
 
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 #include "dictionary.H"
 
-#include "Tuple2.H"
+#include "Tuple2.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

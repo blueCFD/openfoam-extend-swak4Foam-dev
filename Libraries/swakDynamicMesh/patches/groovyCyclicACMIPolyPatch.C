@@ -28,8 +28,8 @@ License
 #if defined(FOAM_HAS_ACMI_INTERFACE) && !defined(FOAM_OLD_AMI_ACMI)
 
 #include "groovyCyclicACMIPolyPatch.H"
-#include "SubField.H"
-#include "Time.H"
+#include "SubField.T.H"
+#include "Time.T.H"
 #include "addToRunTimeSelectionTable.H"
 
 #include "cyclicACMIFvPatch.H"

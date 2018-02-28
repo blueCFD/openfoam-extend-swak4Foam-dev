@@ -39,7 +39,7 @@ Contributors/Copyright:
 
 #include "addToRunTimeSelectionTable.H"
 
-#include "FaceCellWave.H"
+#include "FaceCellWave.T.H"
 
 #include "emptyFvPatchFields.H"
 #include "coupledFvPatchFields.H"

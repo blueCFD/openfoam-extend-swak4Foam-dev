@@ -28,9 +28,9 @@ License
 #ifndef FOAM_BARYCENTRIC_PARTICLES
 
 #include "CorrectParticleCell.H"
-#include "Pstream.H"
-#include "ListListOps.H"
-#include "IOPtrList.H"
+#include "Pstream.T.H"
+#include "ListListOps.T.H"
+#include "IOPtrList.T.H"
 
 // * * * * * * * * * * * * * protected Member Functions  * * * * * * * * * * //
 

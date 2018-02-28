@@ -43,7 +43,7 @@ Contributors/Copyright:
 #ifndef PRINT_SWAK_VERSION_H
 #define PRINT_SWAK_VERSION_H
 
-#include "Pstream.H"
+#include "Pstream.T.H"
 
 namespace Foam {
     void printSwakVersion();

@@ -28,8 +28,15 @@ License
     along with OpenFOAM; if not, write to the Free Software Foundation,
     Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
+Modifications
+    This file has been modified using parts of the files located at
+    "src/OSspecific/MSwindows/signals", from FSD blueCAPE's port of OpenFOAM
+    for Windows (blueCFD-Core), which is derived from Symscape's
+    (www.symscape.com) patches for porting OpenFOAM for Windows.
+
 Contributors/Copyright:
     2014-2017 Bernhard F.W. Gschaider <bgschaid@hfd-research.com>
+    2018 FSD blueCAPE Lda <www.bluecape.com.pt>
 
  SWAK Revision: $Id$
 \*---------------------------------------------------------------------------*/
@@ -41,7 +48,7 @@ Contributors/Copyright:
 
 #include <signal.h>
 
-#include "HashSet.H"
+#include "HashSet.T.H"
 
 #include "objectRegistry.H"
 
@@ -59,17 +66,21 @@ namespace Foam
     );
 
     template<>
-    const char* NamedEnum<Foam::provokeSignalFunctionObject::possibleSignals,7>::names[]=
+    const char* NamedEnum<Foam::provokeSignalFunctionObject::possibleSignals,SIGNAL_COUNT>::names[]=
     {
         "FPE",
         "SEGV",
         "INT",
         "TERM",
+#if defined(WIN32) || defined(WIN64)
+        "BREAK"
+#else
         "QUIT",
         "USR1",
         "USR2"
+#endif
     };
-    const NamedEnum<provokeSignalFunctionObject::possibleSignals,7> provokeSignalFunctionObject::possibleSignalsNames_;
+    const NamedEnum<provokeSignalFunctionObject::possibleSignals,SIGNAL_COUNT> provokeSignalFunctionObject::possibleSignalsNames_;
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
@@ -146,6 +157,11 @@ void provokeSignalFunctionObject::writeSimple()
             case sigTERM:
                 raise(SIGTERM);
                 break;
+#if defined(WIN32) || defined(WIN64)
+            case sigBREAK:
+                raise(SIGBREAK);
+                break;
+#else
             case sigQUIT:
                 raise(SIGQUIT);
                 break;
@@ -155,6 +171,7 @@ void provokeSignalFunctionObject::writeSimple()
             case sigUSR2:
                 raise(SIGUSR2);
                 break;
+#endif
             default:
                 FatalErrorIn("provokeSignalFunctionObject::writeSimple()")
                     << "Unimplemented signal "

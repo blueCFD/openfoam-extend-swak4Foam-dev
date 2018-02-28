@@ -59,3 +59,9 @@ LIB_LIBS = \
     $(THERMOPHYSICALFUNCTIONS_LIB) \
     $(RADIATION_LIB) \
     -llagrangianIntermediate
+
+#if defined( WIN32 ) || defined( WIN64 )
+LIB_LIBS += \
+    -lSLGThermo \
+    -L$(FOAM_USER_LIBBIN) -lswak4FoamParsers
+#endif

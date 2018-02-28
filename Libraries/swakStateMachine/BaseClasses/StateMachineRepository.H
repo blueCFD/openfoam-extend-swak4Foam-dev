@@ -41,7 +41,7 @@ Contributors/Copyright:
 
 #include "StateMachine.H"
 
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 
 #include "regIOobject.H"
 

@@ -45,7 +45,7 @@ Contributors/Copyright:
 #ifndef LogicalAccumulationNamedEnum_H
 #define LogicalAccumulationNamedEnum_H
 
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

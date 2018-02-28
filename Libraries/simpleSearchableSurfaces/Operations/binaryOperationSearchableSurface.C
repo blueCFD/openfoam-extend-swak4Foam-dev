@@ -35,7 +35,7 @@ Contributors/Copyright:
 \*---------------------------------------------------------------------------*/
 
 #include "binaryOperationSearchableSurface.H"
-#include "SortableList.H"
+#include "SortableList.T.H"
 
 #include <cassert>
 

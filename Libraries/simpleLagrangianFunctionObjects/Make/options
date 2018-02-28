@@ -40,3 +40,22 @@ LIB_LIBS = \
     $(THERMOPHYSICALFUNCTIONS_LIB) \
     $(RADIATION_LIB) \
     -lsolidParticle
+
+#if defined( WIN32 ) || defined( WIN64 )
+LIB_LIBS += \
+    -lturbulenceModels \
+    -lcompressibleTurbulenceModels \
+    -llagrangianTurbulence \
+    -lspecie \
+    -lcompressibleTransportModels \
+    -lfluidThermophysicalModels \
+    -lliquidProperties \
+    -lliquidMixtureProperties \
+    -lsolidProperties \
+    -lsolidMixtureProperties \
+    -lthermophysicalFunctions \
+    -lreactionThermophysicalModels \
+    -lSLGThermo \
+    -lsurfaceFilmModels \
+    -L$(FOAM_USER_LIBBIN) -lswak4FoamParsers
+#endif

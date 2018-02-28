@@ -50,7 +50,7 @@ Contributors/Copyright:
 #include "FaPatchValueExpressionDriver.H"
 #endif
 
-#include "Pstream.H"
+#include "Pstream.T.H"
 #include "addToRunTimeSelectionTable.H"
 
 #include "FieldValuePluginFunction.H"

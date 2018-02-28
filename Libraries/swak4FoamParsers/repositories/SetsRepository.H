@@ -47,7 +47,7 @@ Contributors/Copyright:
 #ifndef SetsRepository_H
 #define SetsRepository_H
 
-#include "PtrMap.H"
+#include "PtrMap.T.H"
 #include "sampledSet.H"
 #include "RepositoryBase.H"
 

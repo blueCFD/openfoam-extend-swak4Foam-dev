@@ -46,7 +46,7 @@ Contributors/Copyright:
 #include "OFstream.H"
 #include "interpolationCellPoint.H"
 #include "vectorList.H"
-#include "LPtrList.H"
+#include "LPtrList.T.H"
 #include "swak.H"
 #include "dynamicFvMesh.H"
 

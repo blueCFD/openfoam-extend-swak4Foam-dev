@@ -50,7 +50,7 @@ Contributors/Copyright:
 #ifdef FOAM_MOVED_TIME_AND_STRING_HEADERS
 #include "foamString.H"
 #else
-#include "string.H"
+#include "string.T.H"
 #endif
 
 #endif

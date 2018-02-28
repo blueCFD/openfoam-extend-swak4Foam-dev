@@ -37,9 +37,9 @@ Contributors/Copyright:
 #include "swakIncompressibleTurbulencePluginFunction.H"
 #include "FieldValueExpressionDriver.H"
 
-#include "HashPtrTable.H"
-#include "LESModel.H"
-#include "RASModel.H"
+#include "HashPtrTable.T.H"
+#include "LESModel.T.H"
+#include "RASModel.T.H"
 
 #include "addToRunTimeSelectionTable.H"
 

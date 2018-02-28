@@ -46,7 +46,7 @@ Contributors/Copyright:
 
 #include "CloudProxy.H"
 
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -47,7 +47,7 @@ Contributors/Copyright:
 #ifndef TraceParticles_H
 #define TraceParticles_H
 
-#include "CloudFunctionObject.H"
+#include "CloudFunctionObject.T.H"
 
 #include "swakCloudTypes.H"
 

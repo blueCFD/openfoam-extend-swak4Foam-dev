@@ -51,7 +51,7 @@ Contributors/Copyright:
 #include "objectRegistry.H"
 #include "foamTime.H"
 #else
-#include "Time.H"
+#include "Time.T.H"
 #endif
 
 #endif

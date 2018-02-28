@@ -52,7 +52,7 @@ Contributors/Copyright:
 #ifndef DebugOStream_H
 #define DebugOStream_H
 
-#include "Pstream.H"
+#include "Pstream.T.H"
 
 #include "prefixOSstream.H"
 

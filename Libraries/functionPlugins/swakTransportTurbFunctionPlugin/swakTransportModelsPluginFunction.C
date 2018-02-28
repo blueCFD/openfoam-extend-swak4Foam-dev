@@ -37,7 +37,7 @@ Contributors/Copyright:
 #include "swakTransportModelsPluginFunction.H"
 #include "FieldValueExpressionDriver.H"
 
-#include "HashPtrTable.H"
+#include "HashPtrTable.T.H"
 #include "singlePhaseTransportModel.H"
 #include "addToRunTimeSelectionTable.H"
 

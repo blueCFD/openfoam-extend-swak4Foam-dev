@@ -46,7 +46,7 @@ Contributors/Copyright:
 #ifndef CloudRepository_H
 #define CloudRepository_H
 
-#include "PtrMap.H"
+#include "PtrMap.T.H"
 #include "cloud.H"
 #include "RepositoryBase.H"
 

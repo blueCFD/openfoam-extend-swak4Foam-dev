@@ -17,3 +17,8 @@ LIB_LIBS = \
     -lswak4FoamParsers \
     -lfiniteVolume \
     -lmeshTools
+
+#if defined( WIN32 ) || defined( WIN64 )
+LIB_LIBS += \
+    -lsampling
+#endif

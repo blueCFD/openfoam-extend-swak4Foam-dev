@@ -46,11 +46,11 @@ Contributors/Copyright:
 #include "polyMesh.H"
 #include "fvMesh.H"
 #include "OFstream.H"
-#include "IOPtrList.H"
+#include "IOPtrList.T.H"
 #include "IFstream.H"
-#include "ListListOps.H"
+#include "ListListOps.T.H"
 #include "meshTools.H"
-#include "NamedEnum.H"
+#include "NamedEnum.T.H"
 
 #include "swak.H"
 

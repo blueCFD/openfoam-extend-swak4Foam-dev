@@ -36,7 +36,7 @@ Contributors/Copyright:
 
 #include "renameRegionsSearchableSurface.H"
 #include "addToRunTimeSelectionTable.H"
-#include "Pair.H"
+#include "Pair.T.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

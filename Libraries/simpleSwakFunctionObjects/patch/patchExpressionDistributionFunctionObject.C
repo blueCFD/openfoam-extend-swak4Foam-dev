@@ -42,7 +42,7 @@ Contributors/Copyright:
 #include "pointFields.H"
 
 #include "wordReList.H"
-#include "HashSet.H"
+#include "HashSet.T.H"
 #include "stringListOps.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //

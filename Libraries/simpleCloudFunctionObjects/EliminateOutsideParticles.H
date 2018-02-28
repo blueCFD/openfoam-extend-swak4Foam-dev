@@ -46,7 +46,7 @@ Contributors/Copyright:
 #ifndef EliminateOutsideParticles_H
 #define EliminateOutsideParticles_H
 
-#include "CloudFunctionObject.H"
+#include "CloudFunctionObject.T.H"
 
 #include "swakCloudTypes.H"
 

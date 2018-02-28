@@ -35,7 +35,7 @@ Contributors/Copyright:
 
 #include "TimeCloneList.H"
 #include "DebugOStream.H"
-#include "PstreamReduceOps.H"
+#include "PstreamReduceOps.T.H"
 
 namespace Foam {
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
