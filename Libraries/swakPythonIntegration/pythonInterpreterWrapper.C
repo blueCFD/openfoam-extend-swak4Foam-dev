@@ -572,7 +572,7 @@ bool pythonInterpreterWrapper::executeCode(
 
 bool pythonInterpreterWrapper::executeCodeCaptureOutput(
     const string &code,
-    string &stdout,
+    string &capStdout,
     bool putVariables,
     bool failOnException
 ) {
@@ -614,9 +614,9 @@ bool pythonInterpreterWrapper::executeCodeCaptureOutput(
         PyObject* catcher = PyObject_GetAttrString(m, "__catcher");
         PyObject* output = PyObject_GetAttrString(catcher, "data");
 
-        stdout=string(PyString_AsString(output));
+        capStdout=string(PyString_AsString(output));
 
-        Pbug << "Fail: " << fail << " Captured: " << stdout << endl;
+        Pbug << "Fail: " << fail << " Captured: " << capStdout << endl;
 
         releaseInterpreter();
     }
@@ -624,7 +624,7 @@ bool pythonInterpreterWrapper::executeCodeCaptureOutput(
     if(parallelMustBroadcast()) {
         Pbug << "Prescatter: " << fail << endl;
         Pstream::scatter(fail);
-        Pstream::scatter(stdout);
+        Pstream::scatter(capStdout);
         Pbug << "Postscatter: " << fail << endl;
         if(putVariables) {
             scatterGlobals();
