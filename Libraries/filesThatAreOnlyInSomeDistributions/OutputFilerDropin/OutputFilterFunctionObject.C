@@ -24,7 +24,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "OutputFilterFunctionObject.H"
-#include "IOOutputFilter.T.H"
+#include "IOOutputFilter.H"
 #include "polyMesh.H"
 #include "mapPolyMesh.H"
 #include "addToRunTimeSelectionTable.H"
