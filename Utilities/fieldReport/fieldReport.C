@@ -56,7 +56,7 @@ Contributors/Copyright:
 
 #include "AccumulationCalculation.H"
 
-#include "IOobjectList.H"
+#include "IOobjectList.T.H"
 #include "IOmanip.H"
 
 // Yeah. I know. Global variables. Eeeeevil. But convenient

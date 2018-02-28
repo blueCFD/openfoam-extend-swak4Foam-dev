@@ -44,7 +44,7 @@ Contributors/Copyright:
 #include "faceSet.H"
 #include "pointSet.H"
 #include "swakTime.H"
-#include "IOobjectList.H"
+#include "IOobjectList.T.H"
 
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 

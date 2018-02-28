@@ -55,7 +55,7 @@ Contributors/Copyright:
 
 #include "Field.T.H"
 #include "dimensionedType.H"
-#include "IOobject.H"
+#include "IOobject.T.H"
 
 #include "runTimeSelectionTables.H"
 
