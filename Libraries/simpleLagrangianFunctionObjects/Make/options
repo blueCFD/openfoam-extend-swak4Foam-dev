@@ -49,13 +49,9 @@ LIB_LIBS += \
     -lspecie \
     -lcompressibleTransportModels \
     -lfluidThermophysicalModels \
-    -lliquidProperties \
-    -lliquidMixtureProperties \
-    -lsolidProperties \
-    -lsolidMixtureProperties \
-    -lthermophysicalFunctions \
     -lreactionThermophysicalModels \
     -lSLGThermo \
     -lsurfaceFilmModels \
+    -lthermophysicalProperties \
     -L$(FOAM_USER_LIBBIN) -lswak4FoamParsers
 #endif
