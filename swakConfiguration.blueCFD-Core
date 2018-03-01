@@ -1,0 +1,2 @@
+export SWAK_PYTHON_INCLUDE="$(python-config --cflags)"
+export SWAK_PYTHON_LINK="$(python-config --ldflags)"
