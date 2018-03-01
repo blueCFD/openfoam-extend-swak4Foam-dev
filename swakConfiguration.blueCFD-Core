@@ -1,2 +1,2 @@
-export SWAK_PYTHON_INCLUDE="$(python-config --cflags)"
+export SWAK_PYTHON_INCLUDE="$(python-config --cflags | sed -e 's='"$(cygpath -w -m /)"'='"$(cygpath -w -m -t dos /)"'=g')"
 export SWAK_PYTHON_LINK="$(python-config --ldflags)"
